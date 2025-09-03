@@ -4,14 +4,44 @@ html,body { height: 100%; }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e;
+  background: linear-gradient(-45deg, black, red, black, red);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
   color: white;
   text-align: center;
   padding: 20px;
 }
 
+/* Arka plan animasyonu */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Başlık */
-h1 { margin: 12px 0 24px; color: #6aa6ff; }
+h1 {
+  margin: 12px 0 24px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 20px;
+
+  /* Geçişli animasyonlu siyah-kırmızı yazı */
+  background: linear-gradient(90deg, black, red, black);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 3s linear infinite;
+}
+
+/* Yazı animasyonu */
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
 
 /* Galeri */
 .gallery {
@@ -66,7 +96,6 @@ h1 { margin: 12px 0 24px; color: #6aa6ff; }
   font-weight: 700;
   box-sizing: border-box;
   font-size: 15px;
-  /* Kenar yuvarlatmasını korumak için alt köşelere border-radius uygula */
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -87,7 +116,6 @@ h1 { margin: 12px 0 24px; color: #6aa6ff; }
 }
 
 /* ---------- Her ürüne özel resimler ---------- */
-/* Bunları kendi resim linklerinle değiştir */
 .item1 { background-image: url("https://cdn.itemsatis.com/uploads/post_images/zo-samurai-venom-katana-59177939.png"); }
 .item2 { background-image: url("https://cdn.itemsatis.com/uploads/post_images/roblox-jailbreak-orion-76718899.png"); }
 .item3 { background-image: url("https://cdn.itemsatis.com/uploads/post_images/roblox-jailbreak-iceborn-90950056.png"); }
